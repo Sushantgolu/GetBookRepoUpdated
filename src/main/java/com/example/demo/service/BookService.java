@@ -10,10 +10,21 @@ public class BookService {
     @Autowired
     private repositry re;
 
-    public void add(Book book){
-        re.save(book);
+    public Book add(Book book){
+        return re.save(book);
 
     }
 
 
+    public Book GetById(Integer id) {
+        return re.findById(id).get();
+    }
+
+    public Book updatebook(Book book) {
+
+    }
+
+    public void DeleteBook(int id) {
+        re.deleteById(id);
+    }
 }
